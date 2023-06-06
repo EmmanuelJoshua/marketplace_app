@@ -33,7 +33,7 @@ class ProductCard extends StatelessWidget {
                 child: InkWell(
                   child: Icon(
                     product.isFavorite ? Iconsax.heart5 : Iconsax.heart,
-                    color: kRed,
+                    color: product.isFavorite ? kRed : black,
                   ),
                 ),
               )

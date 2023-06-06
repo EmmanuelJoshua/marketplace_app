@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marketplace_app/core/models/banner_model.dart';
 import 'package:marketplace_app/utils/utils.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/dot_indicator.dart';
+import 'package:marketplace_app/views/screens/home/widgets/dot_indicator.dart';
 import 'package:marketplace_app/views/shared_widgets/widgets.dart';
 
 class BannerWidget extends StatelessWidget {

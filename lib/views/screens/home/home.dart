@@ -5,11 +5,12 @@ import 'package:marketplace_app/core/models/banner_model.dart';
 import 'package:marketplace_app/core/models/category_model.dart';
 import 'package:marketplace_app/core/models/product_model.dart';
 import 'package:marketplace_app/utils/utils.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/badge_icon.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/banner.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/category.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/dot_indicator.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/searchbar.dart';
+import 'package:marketplace_app/views/screens/home/widgets/banner.dart';
+import 'package:marketplace_app/views/screens/home/widgets/category.dart';
+import 'package:marketplace_app/views/screens/home/widgets/dot_indicator.dart';
+import 'package:marketplace_app/views/screens/home/widgets/searchbar.dart';
+import 'package:marketplace_app/views/screens/product/product_detail.dart';
+import 'package:marketplace_app/views/shared_widgets/badge_icon.dart';
 import 'package:marketplace_app/views/shared_widgets/widgets.dart';
 
 class Home extends HookWidget {
@@ -71,6 +72,13 @@ class Home extends HookWidget {
       price: 12,
       ratings: 2356,
       isFavorite: true,
+      productImages: [
+        ImageAssets.product1,
+        ImageAssets.product2,
+        ImageAssets.product3,
+        ImageAssets.product4,
+      ],
+      storeName: 'tokobaju.id',
     ),
     const ProductModel(
       image: ImageAssets.product2,
@@ -80,6 +88,13 @@ class Home extends HookWidget {
       price: 30,
       ratings: 2356,
       isFavorite: false,
+      productImages: [
+        ImageAssets.product2,
+        ImageAssets.product1,
+        ImageAssets.product3,
+        ImageAssets.product4,
+      ],
+      storeName: 'Thrift_store',
     ),
     const ProductModel(
       image: ImageAssets.product3,
@@ -89,6 +104,13 @@ class Home extends HookWidget {
       price: 18,
       ratings: 2356,
       isFavorite: false,
+      productImages: [
+        ImageAssets.product3,
+        ImageAssets.product2,
+        ImageAssets.product3,
+        ImageAssets.product1,
+      ],
+      storeName: 'Thrift_store',
     ),
     const ProductModel(
       image: ImageAssets.product4,
@@ -98,6 +120,13 @@ class Home extends HookWidget {
       price: 40,
       ratings: 2356,
       isFavorite: false,
+      productImages: [
+        ImageAssets.product4,
+        ImageAssets.product3,
+        ImageAssets.product2,
+        ImageAssets.product1,
+      ],
+      storeName: 'Thrift_store',
     ),
     const ProductModel(
       image: ImageAssets.product2,
@@ -107,6 +136,13 @@ class Home extends HookWidget {
       price: 19,
       ratings: 2356,
       isFavorite: false,
+      productImages: [
+        ImageAssets.product2,
+        ImageAssets.product4,
+        ImageAssets.product3,
+        ImageAssets.product1,
+      ],
+      storeName: 'Thrift_store',
     ),
     const ProductModel(
       image: ImageAssets.product1,
@@ -116,6 +152,13 @@ class Home extends HookWidget {
       price: 25,
       ratings: 2356,
       isFavorite: true,
+      productImages: [
+        ImageAssets.product1,
+        ImageAssets.product4,
+        ImageAssets.product2,
+        ImageAssets.product3,
+      ],
+      storeName: 'Thrift_store',
     ),
   ];
 
@@ -226,6 +269,38 @@ class Home extends HookWidget {
                     (context, index) {
                       final product = products[index];
                       return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      ProductDetail(product: product),
+                              transitionsBuilder: (
+                                context,
+                                animation,
+                                secondaryAnimation,
+                                child,
+                              ) {
+                                const begin = Offset(0, 1);
+                                const end = Offset.zero;
+                                const curve = Curves.easeInCubic;
+
+                                final tween =
+                                    Tween(begin: begin, end: end).chain(
+                                  CurveTween(
+                                    curve: curve,
+                                  ),
+                                );
+
+                                return SlideTransition(
+                                  position: animation.drive(tween),
+                                  child: child,
+                                );
+                              },
+                            ),
+                          );
+                        },
                         child: ProductCard(
                           product: product,
                         ),

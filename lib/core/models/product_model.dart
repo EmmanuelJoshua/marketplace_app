@@ -7,6 +7,8 @@ class ProductModel {
     required this.price,
     required this.ratings,
     required this.isFavorite,
+    required this.productImages,
+    required this.storeName,
   });
 
   final String image;
@@ -16,4 +18,6 @@ class ProductModel {
   final double price;
   final int ratings;
   final bool isFavorite;
+  final List<String> productImages;
+  final String storeName;
 }

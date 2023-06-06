@@ -16,6 +16,37 @@ ThemeData get appTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textTheme: GoogleFonts.poppinsTextTheme(),
     primaryColor: black,
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      backgroundColor: white,
+      iconTheme: IconThemeData(
+        color: black,
+      ),
+    ),
+    tabBarTheme: TabBarTheme(
+      labelPadding: EdgeInsets.zero,
+      indicator: const UnderlineTabIndicator(
+        borderSide: BorderSide(
+          color: kGreen,
+          width: 3,
+        ),
+      ),
+      indicatorSize: TabBarIndicatorSize.label,
+      labelColor: kGreen,
+      labelStyle: GoogleFonts.poppins(
+        textStyle: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      unselectedLabelColor: kGreen,
+      unselectedLabelStyle: GoogleFonts.poppins(
+        textStyle: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ),
     scaffoldBackgroundColor: white,
     bottomSheetTheme:
         BottomSheetThemeData(backgroundColor: Colors.black.withOpacity(0)),

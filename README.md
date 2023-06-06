@@ -1,16 +1,18 @@
-# marketplace_app
+# Marketplace App
 
-A new Flutter project.
+Marketplace app built with the Flutter framework
 
-## Getting Started
+## Tools used in building
 
-This project is a starting point for a Flutter application.
+- flutter_hooks `internal state`
+- google_fonts `on demand fonts`
+- iconsax `icon pack`
+- animations `flutter animations package`
+- flutter_animate `gskinner animations package`
+- gap `intuitive sizedbox replacement`
+- flutter `v3.10 - mobile sdk`
 
-A few resources to get you started if this is your first Flutter project:
+## App screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![imageone](./screens/screen1.png)
+![imageone](./screens/screen2.png)
