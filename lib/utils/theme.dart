@@ -16,7 +16,6 @@ ThemeData get appTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textTheme: GoogleFonts.poppinsTextTheme(),
     primaryColor: black,
-    cardColor: Colors.transparent,
     scaffoldBackgroundColor: white,
     bottomSheetTheme:
         BottomSheetThemeData(backgroundColor: Colors.black.withOpacity(0)),

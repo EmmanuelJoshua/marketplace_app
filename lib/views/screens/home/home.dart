@@ -5,11 +5,11 @@ import 'package:marketplace_app/core/models/banner_model.dart';
 import 'package:marketplace_app/core/models/category_model.dart';
 import 'package:marketplace_app/core/models/product_model.dart';
 import 'package:marketplace_app/utils/utils.dart';
-import 'package:marketplace_app/views/screens/dashboard/widgets/appbar.dart';
 import 'package:marketplace_app/views/screens/dashboard/widgets/badge_icon.dart';
 import 'package:marketplace_app/views/screens/dashboard/widgets/banner.dart';
 import 'package:marketplace_app/views/screens/dashboard/widgets/category.dart';
 import 'package:marketplace_app/views/screens/dashboard/widgets/dot_indicator.dart';
+import 'package:marketplace_app/views/screens/dashboard/widgets/searchbar.dart';
 import 'package:marketplace_app/views/shared_widgets/widgets.dart';
 
 class Home extends HookWidget {
@@ -132,15 +132,13 @@ class Home extends HookWidget {
                 floating: true,
                 expandedHeight: 270,
                 backgroundColor: white,
-
                 scrolledUnderElevation: 4,
                 shadowColor: kTextColor.withOpacity(.1),
                 foregroundColor: black,
-                title: const Appbar(),
-                // actionsIconTheme: IconThemeData(color: black),
+                title: const Searchbar(),
                 actions: const [
                   Padding(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 12),
                     child: BadgeIcon(
                       value: '1',
                       icon: Iconsax.bag_2,
@@ -148,7 +146,7 @@ class Home extends HookWidget {
                   ),
                   Gap(15),
                   Padding(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 12),
                     child: BadgeIcon(
                       value: '9+',
                       icon: Iconsax.message_text,
@@ -233,7 +231,7 @@ class Home extends HookWidget {
                         ),
                       );
                     },
-                    childCount: 6,
+                    childCount: products.length,
                   ),
                 ),
               ),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:marketplace_app/utils/utils.dart';
 
-class Appbar extends StatelessWidget {
-  const Appbar({super.key});
+class Searchbar extends StatelessWidget {
+  const Searchbar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,22 @@ class Appbar extends StatelessWidget {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: kGrey,
-                    width: 1.2,
+                    color: kGrey.withOpacity(.5),
+                    width: 1.3,
                   ),
                 ),
                 child: Row(
                   children: [
-                    const Icon(
-                      Iconsax.search_normal_14,
-                      color: kGrey,
-                      size: 23,
+                    //Added to make icon theme constant
+                    Theme(
+                      data: ThemeData(
+                        iconTheme: const IconThemeData(),
+                      ),
+                      child: const Icon(
+                        Iconsax.search_normal_14,
+                        color: kGrey,
+                        size: 23,
+                      ),
                     ),
                     const Gap(15),
                     Expanded(
