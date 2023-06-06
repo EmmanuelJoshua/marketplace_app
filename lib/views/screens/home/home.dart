@@ -228,12 +228,6 @@ class Home extends HookWidget {
                     (context, index) {
                       final product = products[index];
                       return GestureDetector(
-                        // onTap: () => Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const ItemDetailsView(),
-                        //   ),
-                        // ),
                         child: ProductCard(
                           product: product,
                         ),
